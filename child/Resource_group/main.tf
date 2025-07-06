@@ -6,8 +6,16 @@ resource "azurerm_resource_group" "rgs" {
 }
 resource "azurerm_resource_group" "rgs" {
     for_each = var.rg
+
     name = "xy"
     location = "east us"
+  
+resource "azurerm_resource_group" "rgs" {
+    for_each = var.rg
+    name = each.value.name
+    location = each.value.location
+   loction = "east US"
+
 }
 
 
